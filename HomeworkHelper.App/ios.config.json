@@ -1,0 +1,9 @@
+{
+  "AppName":"homeworkhelper.app",
+  "AppId":"com.4sight.homeworkhelper",
+  "Version":"0.1",
+  "BuildVersion":"0.1.0",
+  "CodeSign":"",
+  "Profile":"",
+  "WeexBundle":"app.weex.js"
+}

@@ -1,0 +1,6 @@
+{
+  "AppName":"homeworkhelper.app",
+  "AppId":"com.4sight.homeworkhelper",
+  "SplashText":"Hello\nhomeworkhelper.app",
+  "WeexBundle":"app.weex.js"
+}
