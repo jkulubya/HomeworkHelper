@@ -39,14 +39,14 @@ namespace HomeworkHelper.Identity
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentity<ApplicationUser, IdentityRole>(o => {
                 o.Password.RequireDigit = false;
                 o.Password.RequireNonAlphanumeric = false;
                 o.Password.RequireLowercase = false;
                 o.Password.RequireUppercase = false;
                 o.Password.RequiredLength = 8;
-                o.Cookies.ApplicationCookie.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                //o.Cookies.ApplicationCookie.ExpireTimeSpan = TimeSpan.FromMinutes(10);
                 o.Cookies.ApplicationCookie.LoginPath = "/account/login";
                 o.Cookies.ApplicationCookie.LogoutPath = "/account/logout";
             })

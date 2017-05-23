@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkHelper.Admin", "Hom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkHelper.Identity", "HomeworkHelper.Identity\HomeworkHelper.Identity.csproj", "{C6C77437-F963-442E-A701-EE19FBCB7888}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkHelper.Api", "HomeworkHelper.Api\HomeworkHelper.Api.csproj", "{A209697C-7B0E-4E54-8593-4A63D844B33C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C6C77437-F963-442E-A701-EE19FBCB7888}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6C77437-F963-442E-A701-EE19FBCB7888}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6C77437-F963-442E-A701-EE19FBCB7888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A209697C-7B0E-4E54-8593-4A63D844B33C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A209697C-7B0E-4E54-8593-4A63D844B33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A209697C-7B0E-4E54-8593-4A63D844B33C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A209697C-7B0E-4E54-8593-4A63D844B33C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
