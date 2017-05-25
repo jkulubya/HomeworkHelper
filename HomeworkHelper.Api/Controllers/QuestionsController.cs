@@ -32,7 +32,15 @@ namespace HomeworkHelper.Api.Controllers
         public IActionResult Get()
         {
             var questions = (from q in _context.Questions
-                select q).Take(30);
+                            join u in _context.Users
+                            on q.AuthorId equals u.Id
+                            select new {
+                                Id = q.Id,
+                                AuthorId = q.AuthorId,
+                                Title = q.Title,
+                                Text = q.Text,
+                                Author = u.UserName
+                            }).Take(30);
 
             return Json(questions);
         }
@@ -41,7 +49,18 @@ namespace HomeworkHelper.Api.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var question = _context.Questions.SingleOrDefault(q => q.Id == id);
+            var question = (from q in _context.Questions
+                            join u in _context.Users
+                            on q.AuthorId equals u.Id
+                            where q.Id == id
+                            select new {
+                                Id = q.Id,
+                                AuthorId = q.AuthorId,
+                                Title = q.Title,
+                                Text = q.Text,
+                                Author = u.UserName
+                            }).SingleOrDefault();
+            
             if (question == null) return NotFound();
 
             return Json(question);
@@ -74,7 +93,17 @@ namespace HomeworkHelper.Api.Controllers
         [HttpGet("{id}/answers")]
         public IActionResult GetAnswers(int id)
         {
-            var answers = _context.Answers.Where(a => a.QuestionId == id);
+            var answers = from a in _context.Answers
+                            join u in _context.Users
+                            on a.AuthorId equals u.Id
+                            where a.QuestionId == id
+                            select new {
+                                id = a.Id,
+                                text = a.Text,
+                                questionId = a.QuestionId,
+                                authorId = a.AuthorId,
+                                author = u.UserName
+                            };
 
             return Json(answers);
         }
